@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const exhbs = require("express-handlebars");
-
+const sequelize = require("./config/connection")
 
 
 
@@ -44,5 +44,7 @@ axios.request(options).then(function (response) {
 
 
 
-app.listen(port,()=>{console.log("listening on "+port)})
+sequelize.sync({ force: false }).then(() => {
+    app.listen(port, () => console.log('Now listening'+ port));
+  });
 
