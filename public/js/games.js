@@ -1,10 +1,11 @@
-const searchGame = (e) => { console.log('search-game')
+const searchGame = async (e) => { console.log('search-game')
     const search = document.querySelector('#gamesInput').value
-    const response = await fetch('/api/getGame/' + search, {
+    const response =  await fetch('/api/getGame/' + search, {
         method: 'GET',
        
         headers: { 'Content-Type': 'application/json' },
       });
+      console.log(response)
 }
-console.log(response)
-document.querySelector('#searchBtn').addEventListener('submit', searchGame)
+
+document.querySelector('#searchBtn').addEventListener('click', searchGame)

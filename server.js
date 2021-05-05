@@ -71,16 +71,18 @@ const axios = require("axios").default;
 // const router = require('express').Router();
 app.get('/api/getGame/:game', (req, res)=>{
   let searchTerm = req.params.game
-  let slug = searchTerm.split(' ').join('-').toLowerCase
+  let slug = searchTerm.split(' ').join('-')
+  console.log(slug)
   var options = {
       method: 'GET',
-      url: `https://api.rawg.io/api/games?search=${slug}key=53dc43378b8d4d61904e5b56d2d5ccec`
+      url: `https://api.rawg.io/api/games?search=${slug}&key=53dc43378b8d4d61904e5b56d2d5ccec`
     };
     console.log('search')
     axios.request(options).then(function (response) {
-    	console.log(response.data);
+    	res.json(response.data.results);
+      
     }).catch(function (error) {
-    	console.error(error);
+    	// console.error(error);
     });
 })
 const User  = require('./models/User');
