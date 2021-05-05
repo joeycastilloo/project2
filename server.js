@@ -80,7 +80,24 @@ app.get('/api/getGame/:game', (req, res)=>{
     console.log('search')
     axios.request(options).then(function (response) {
     	res.json(response.data.results);
-      
+      var gamesList = response.data.results[0]
+      // var gameName = gamesList.name
+      // var metacritic = gamesList.metacritic
+      // var screenshot = gamesList.short_screenshots[0].image
+      var clip = gamesList.clip.clips;
+      var genreList0 = gamesList.genres.name;
+      // var genreList1 = gamesList.genres.name;
+      var store0 = gamesList.stores.store.name;
+      // var store1 = gamesList.stores.store.name;
+
+      // console.log('gameName', gameName)
+      // console.log('metacritic', metacritic)
+      // console.log('screenshot', screenshot)
+      // console.log('clip', clip)
+      console.log('genreList0', genreList0)
+      // console.log('genreList1', genreList1)
+      // console.log('store0', store0)
+      // console.log('store1', store1)
     }).catch(function (error) {
     	// console.error(error);
     });

@@ -5,7 +5,7 @@ const searchGame = async (e) => { console.log('search-game')
        
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log(response)
+      console.log(response.body)
 }
 
 document.querySelector('#searchBtn').addEventListener('click', searchGame)
