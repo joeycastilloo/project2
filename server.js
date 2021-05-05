@@ -31,6 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res){
   res.render('login')
 })
+app.get('/landing', function(req, res){
+  res.render('landing')
+})
 
 
 
@@ -52,7 +55,7 @@ app.get('/', function(req, res){
 // });
 
 
-// var axios = require("axios").default;
+const axios = require("axios").default;
 
 // var options = {
 //   method: 'GET',
@@ -66,6 +69,20 @@ app.get('/', function(req, res){
 // });
 
 // const router = require('express').Router();
+app.get('/api/getGame/:game', (req, res)=>{
+  let searchTerm = req.params.game
+  let slug = searchTerm.split(' ').join('-').toLowerCase
+  var options = {
+      method: 'GET',
+      url: `https://api.rawg.io/api/games?search=${slug}key=53dc43378b8d4d61904e5b56d2d5ccec`
+    };
+    console.log('search')
+    axios.request(options).then(function (response) {
+    	console.log(response.data);
+    }).catch(function (error) {
+    	console.error(error);
+    });
+})
 const User  = require('./models/User');
 
 app.post('/api/user', async (req, res) => {
@@ -78,7 +95,7 @@ app.post('/api/user', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
+        console.log(userData)
       res.status(200).json(userData);
     });
   } catch (err) {
