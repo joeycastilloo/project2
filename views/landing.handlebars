@@ -1,6 +1,7 @@
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
+
     <img src="/controller.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     Game Hub
   </a>
@@ -10,9 +11,12 @@
     <div class="col-md-5 text-center  gameBox">
       <h1>Games I have</h1>
     </div>
-    <div class="col-md-2 text-center">
+    <div class="col-md-2 text-center gameDiv">
       <input id="gamesInput" type="text" placeholder="Search by game">
     <button id="searchBtn">click</button>
+		<h2 class="gameName"></h2>
+		<button class="choiceBtn" value="true">Owned</button>
+		<button class="choiceBtn2" value="false">Wish list</button>
     </div>
     <div class="col-md-5 text-center gameBox">
        <h1>Games I want</h1>

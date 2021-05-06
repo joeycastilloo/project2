@@ -28,12 +28,7 @@ app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
-  res.render('login')
-})
-app.get('/landing', function(req, res){
-  res.render('landing')
-})
+
 
 
 
@@ -54,7 +49,10 @@ app.get('/landing', function(req, res){
 // 	console.log(res.body);
 // });
 
-
+app.post('/api/saveGame', (req, res) => {
+  console.log(req.session.user)
+  console.log(req.body)
+})
 const axios = require("axios").default;
 
 // var options = {
@@ -75,11 +73,14 @@ app.get('/api/getGame/:game', (req, res)=>{
   console.log(slug)
   var options = {
       method: 'GET',
-      url: `https://api.rawg.io/api/games?search=${slug}&key=53dc43378b8d4d61904e5b56d2d5ccec`
+      url: `https://api.rawg.io/api/games?search=${slug}&page_size=1&key=53dc43378b8d4d61904e5b56d2d5ccec`
     };
     console.log('search')
     axios.request(options).then(function (response) {
-    	res.json(response.data.results);
+    	// res.json(response);
+      res.json(response.data.results)
+
+
       var gamesList = response.data.results[0]
       // var gameName = gamesList.name
       // var metacritic = gamesList.metacritic
@@ -103,6 +104,7 @@ app.get('/api/getGame/:game', (req, res)=>{
     });
 })
 const User  = require('./models/User');
+const { error } = require("console");
 
 app.post('/api/user', async (req, res) => {
   console.log('signing up')
@@ -126,8 +128,8 @@ app.post('/api/user', async (req, res) => {
 app.post('/api/user/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-
     if (!userData) {
+      console.log('bad info')
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -137,6 +139,7 @@ app.post('/api/user/login', async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log('bad password')
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -151,11 +154,17 @@ app.post('/api/user/login', async (req, res) => {
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
-
+app.get('/', function(req, res){
+  res.render('login')
+})
+app.get('/landing', function(req, res){
+  res.render('landing')
+})
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(port, () => console.log('Now listening'+ port));

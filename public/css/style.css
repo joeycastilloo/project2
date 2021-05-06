@@ -46,3 +46,13 @@ footer {
     border-radius: 6px;
     box-shadow: rgb(255,88,36) 5px 5px 8px;
 }
+
+.choiceBtn {
+ border-radius: 3px;
+ background-color: chartreuse;
+}
+
+.choiceBtn2 {
+border-radius: 3px;
+background-color: cyan;
+}
