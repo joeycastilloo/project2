@@ -11,11 +11,20 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        
-        <a href="/">Gaming Hub</a>
-      </h1>
+    <header class="display-flex justify-space-between align-center">
+     
+     
+      
+        <div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+    <h1 class="display-4">Gaming Hub</h1>
+    <div class="subTitle">
+    <p class="lead">Welcome to gaming hub! <br> Please login to continue to your lists.</p>
+    </div>
+  </div>
+</div>
+     
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -30,12 +39,19 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    </footer>
+ 
   </div>
 
 
+
+
+
+
+
+   <footer>
+     <a href='https://www.freepik.com/vectors/background'>Background vector created by roserodionova - www.freepik.com</a>
+      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </footer>
   <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
