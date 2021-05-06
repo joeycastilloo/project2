@@ -1,3 +1,48 @@
 /* .gameBox {
     border: 3px solid mediumspringgreen;
 } */
+.jumbotron-fluid {
+    background-image: url(/css/jumbotron-bround-img.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.display-4 {
+    text-shadow: 3px 3px 5px;
+    font-weight: 450;
+    color: whitesmoke;
+}
+
+.lead {
+    font-weight: 350;
+    color:teal;
+    text-shadow: 2px 2px 4px;
+}
+
+body {
+    background-color:rgb(64,68,244);
+   ;
+}
+
+.subTitle {
+    background-color: rgba(255, 255, 255, 0.835);
+    width: 25%;
+    padding: .5em;
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px;
+}
+
+.signup-form {
+    justify-content: center;
+}
+
+footer {
+    position:fixed;
+    bottom: 0;
+}
+
+.row {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: rgb(255,88,36) 5px 5px 8px;
+}
