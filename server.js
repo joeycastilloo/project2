@@ -50,7 +50,7 @@ app.get('/api/getGame/:game', (req, res)=>{
     });
 })
 
-const User  = require('./models/User');
+const User  = require('./models/user');
 const { error } = require("console");
 
 app.post('/api/user', async (req, res) => {
