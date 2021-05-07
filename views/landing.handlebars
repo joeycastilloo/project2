@@ -5,11 +5,13 @@
     <img src="/controller.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     Game Hub
   </a>
+  <h3>{{userEmail}}</h3>
 </nav>
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center  gameBox">
       <h1>Games I have</h1>
+	  <div class="leftColumn"></div>
     </div>
     <div class="col-md-2 text-center gameDiv">
       <input id="gamesInput" type="text" placeholder="Search by game">
@@ -20,39 +22,12 @@
     </div>
     <div class="col-md-5 text-center gameBox">
        <h1>Games I want</h1>
+	   <div class="rightColumn"></div>
     </div>
   </div>
 </div>
-{{!-- <section>
-  <div id="game-card" class="card darken-1 glass">
-		<div class="row">
-		  <div class="col s12 m3">
-			<div id="game-blurb" class="card-content white-text">
-			  <span class="card-title game-card-title card-columns">${gameName}</span>
-			  <p class="left-blurb glassScore">Metacritic Score: ${metacritic}</p>
-			  <br>
-			  <p class="left-blurb">${genreList0}</p>
-			  <br>
-			  <p class="left-blurb">${genreList1}</p>
-			  <br>
-			 
-			</div>
-		  </div>
-		  <div class="col s12 m3 card-columns">
-			<img class="materialboxed card-pics" width="100%"
-			  src='${screenshot}'>
-		  </div>
-		  <div class="col s12 m3 card-columns">
-			<iframe title='Video player' type="text/html" width='320' height='195' src='${clip}'frameborder='0' allowFullScreen></iframe>
-		  </div>
-		  <div id='review-blurb' class="col s3 card-columns">
-			<p id='right-text'>${store0}</p>
-			<br>
-			<p id='right-text'>${store1}</p>
-			<br>
-		
-		  </div>
-		</div>
-	  </div>
-</section> --}}
+ <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 <script src="/js/games.js"></script>
