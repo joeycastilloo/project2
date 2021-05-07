@@ -54,8 +54,8 @@ const User  = require('./models/user');
 const { error } = require("console");
 
 app.post('/api/user', async (req, res) => {
-  console.log('signing up')
-  console.log(req.body)
+  // console.log('signing up')
+  // console.log(req.body)
   try {
     const userData = await User.create(req.body);
 
@@ -76,7 +76,7 @@ app.post('/api/user/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {
-      console.log('bad info')
+      // console.log('bad info')
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
