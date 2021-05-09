@@ -1,6 +1,3 @@
-/* .gameBox {
-    border: 3px solid mediumspringgreen;
-} */
 .jumbotron-fluid {
     background-image: url(/css/jumbotron-bround-img.jpg);
     background-position: center;
@@ -49,7 +46,7 @@ footer {
 
 .choiceBtn {
  border-radius: 3px;
- background-color: chartreuse;
+ background-color: chartreuse ;
 }
 
 .choiceBtn2 {
