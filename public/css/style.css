@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color:rgb(64,68,244);
+    background-color: rgb(253,112,58);
    ;
 }
 
@@ -39,9 +39,10 @@ footer {
 }
 
 .row {
-    background-color: white;
+    background-color:rgb(254,253,254) ;
     border-radius: 6px;
-    box-shadow: rgb(255,88,36) 5px 5px 8px;
+    box-shadow: inset rgb(251,27,252) 0 0 2em 0, rgb(251,27,252) 0 0 6em 0 ;
+    
 }
 
 .choiceBtn {
@@ -52,4 +53,8 @@ footer {
 .choiceBtn2 {
 border-radius: 3px;
 background-color: cyan;
+}
+
+.rickRoll {
+    opacity: 0;
 }
